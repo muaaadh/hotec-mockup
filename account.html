@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Account | Hotec</title>
+<meta name="description" content="Sign in or create a Hotec customer or business account to track orders, save your details and reorder.">
+<meta name="theme-color" content="#255b97">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__hotecReady)document.documentElement.classList.remove('js')},2500)</script>
+</head>
+<body data-page="account">
+
+<div id="nav"></div>
+
+<main class="page">
+  <!-- signed out -->
+  <div class="wrap" id="auth-view" hidden>
+    <div class="page-head">
+      <div>
+        <span class="pill"><i data-i="user"></i>Account</span>
+        <h1>Your Hotec account</h1>
+      </div>
+      <p class="lead">One account for your home, or one for your business. Track orders, save your details and reorder in a tap.</p>
+    </div>
+
+    <div class="auth">
+      <div class="card panel">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" id="tab-create" aria-controls="pane-create" aria-selected="true">Create account</button>
+          <button type="button" role="tab" id="tab-signin" aria-controls="pane-signin" aria-selected="false">Sign in</button>
+        </div>
+
+        <form id="pane-create" role="tabpanel" aria-labelledby="tab-create" novalidate>
+          <p class="lbl" style="font-size:15px;font-weight:500;color:var(--ink);margin-bottom:8px">Account type</p>
+          <div class="seg" role="radiogroup" aria-label="Account type">
+            <label><input type="radio" name="type" value="personal" checked><span><i data-i="user"></i>Customer</span></label>
+            <label><input type="radio" name="type" value="business"><span><i data-i="building"></i>Business</span></label>
+          </div>
+          <div class="form" style="margin-top:18px">
+            <div class="field full" data-only="business">
+              <label for="c-business">Business name</label>
+              <input id="c-business" name="business" autocomplete="organization">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field" data-only="business">
+              <label for="c-btype">Type of business</label>
+              <select id="c-btype" name="btype">
+                <option value="">Choose one</option>
+                <option>Restaurant or café</option>
+                <option>Guest house</option>
+                <option>Resort or hotel</option>
+                <option>Other company</option>
+              </select>
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field" data-only="business">
+              <label for="c-tin">GST TIN <span class="opt">(optional)</span></label>
+              <input id="c-tin" name="tin" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label for="c-name"><span data-only="personal">Your name</span><span data-only="business">Contact person</span></label>
+              <input id="c-name" name="name" autocomplete="name">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="c-mobile">Mobile number</label>
+              <input id="c-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="7XX XXXX">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="c-email">Email <span class="opt" data-only="personal">(optional)</span></label>
+              <input id="c-email" name="email" type="email" autocomplete="email">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="c-pass">Password</label>
+              <input id="c-pass" name="password" type="password" autocomplete="new-password">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Create account</button>
+            </div>
+          </div>
+        </form>
+
+        <form id="pane-signin" role="tabpanel" aria-labelledby="tab-signin" hidden novalidate>
+          <div class="form">
+            <div class="field full">
+              <label for="s-mobile">Mobile number</label>
+              <input id="s-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="7XX XXXX">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field full">
+              <label for="s-pass">Password</label>
+              <input id="s-pass" name="password" type="password" autocomplete="current-password">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field full">
+              <button class="btn btn-primary btn-lg btn-block" type="submit">Sign in</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <aside class="auth-side" id="auth-side"></aside>
+    </div>
+  </div>
+
+  <!-- signed in -->
+  <div class="wrap" id="dash-view" hidden></div>
+</main>
+
+<div id="foot"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/account.js"></script>
+</body>
+</html>

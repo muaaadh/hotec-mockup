@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Order | Hotec</title>
+<meta name="description" content="Send your order to Hotec as a customer, or as a business with a quotation and invoice.">
+<meta name="theme-color" content="#255b97">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__hotecReady)document.documentElement.classList.remove('js')},2500)</script>
+</head>
+<body data-page="order">
+
+<div id="nav"></div>
+
+<main class="page">
+  <div class="wrap" id="order-view">
+    <div class="page-head">
+      <div>
+        <span class="pill"><i data-i="bag"></i>Order</span>
+        <h1>Send your order</h1>
+      </div>
+      <p class="lead">Three short steps. We confirm availability, delivery and payment with you before anything is charged.</p>
+    </div>
+
+    <form class="order" id="order-form" novalidate>
+      <div>
+        <!-- step 1 -->
+        <section class="card panel" aria-labelledby="s1">
+          <div class="step"><span class="step-n">1</span><h2 id="s1">Who is this order for?</h2></div>
+          <p class="hint" id="signed-note" hidden></p>
+          <div class="choice" role="radiogroup" aria-labelledby="s1">
+            <label>
+              <input type="radio" name="account" value="personal" checked>
+              <span class="tick"><i data-i="check"></i></span>
+              <span class="c-ic"><i data-i="user"></i></span>
+              <b>Customer</b>
+              <span class="d">I am buying for my home.</span>
+              <ul>
+                <li><i data-i="check"></i>Order online and track it</li>
+                <li><i data-i="check"></i>Save your delivery details</li>
+              </ul>
+            </label>
+            <label>
+              <input type="radio" name="account" value="business">
+              <span class="tick"><i data-i="check"></i></span>
+              <span class="c-ic"><i data-i="building"></i></span>
+              <b>Business</b>
+              <span class="d">I am buying for a restaurant, guest house, resort or company.</span>
+              <ul>
+                <li><i data-i="check"></i>Ask for a quotation first</li>
+                <li><i data-i="check"></i>Invoice in your company name</li>
+              </ul>
+            </label>
+          </div>
+        </section>
+
+        <!-- step 2 -->
+        <section class="card panel" aria-labelledby="s2">
+          <div class="step"><span class="step-n">2</span><h2 id="s2">Your details</h2></div>
+          <div class="form">
+            <div class="field full" data-only="business">
+              <label for="f-business">Business name</label>
+              <input id="f-business" name="business" autocomplete="organization" placeholder="For example, Sea Breeze Guest House">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field" data-only="business">
+              <label for="f-btype">Type of business</label>
+              <select id="f-btype" name="btype">
+                <option value="">Choose one</option>
+                <option>Restaurant or café</option>
+                <option>Guest house</option>
+                <option>Resort or hotel</option>
+                <option>Other company</option>
+              </select>
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field" data-only="business">
+              <label for="f-tin">GST TIN <span class="opt">(optional)</span></label>
+              <input id="f-tin" name="tin" inputmode="numeric" placeholder="For your tax invoice">
+            </div>
+            <div class="field">
+              <label for="f-name"><span data-only="personal">Your name</span><span data-only="business">Contact person</span></label>
+              <input id="f-name" name="name" autocomplete="name">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="f-mobile">Mobile number</label>
+              <input id="f-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="7XX XXXX">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field full">
+              <label for="f-email">Email <span class="opt" data-only="personal">(optional)</span><span class="opt" data-only="business">(for your quotation and invoice)</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email">
+              <span class="err" role="alert"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- step 3 -->
+        <section class="card panel" aria-labelledby="s3">
+          <div class="step"><span class="step-n">3</span><h2 id="s3">Delivery</h2></div>
+          <div class="seg" role="radiogroup" aria-label="How would you like to get your order">
+            <label><input type="radio" name="method" value="deliver" checked><span><i data-i="truck"></i>Deliver to me</span></label>
+            <label><input type="radio" name="method" value="collect"><span><i data-i="store"></i>Collect in store</span></label>
+          </div>
+          <div class="form" style="margin-top:18px" id="deliver-fields">
+            <div class="field">
+              <label for="f-island">Island</label>
+              <input id="f-island" name="island" placeholder="For example, Hulhumalé" autocomplete="address-level2">
+              <span class="err" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="f-address">Address</label>
+              <input id="f-address" name="address" placeholder="House or building, road" autocomplete="street-address">
+              <span class="err" role="alert"></span>
+            </div>
+          </div>
+          <p class="hint" id="collect-note" hidden style="margin-top:14px">We will message you when your order is ready to collect.</p>
+          <div class="form" style="margin-top:16px">
+            <div class="field full">
+              <label for="f-notes">Notes <span class="opt">(optional)</span></label>
+              <textarea id="f-notes" name="notes" placeholder="Anything we should know, or other products you would like a price for"></textarea>
+            </div>
+            <label class="check field full" data-only="business"><input type="checkbox" name="quote" checked><span>Send me a quotation first. I will confirm the order after I see the price.</span></label>
+            <label class="check field full" id="save-row"><input type="checkbox" name="save" checked><span>Save these details as my <b data-only="personal" style="font-weight:500;color:var(--ink)">customer account</b><b data-only="business" style="font-weight:500;color:var(--ink)">business account</b>, so I can track this order and reorder.</span></label>
+          </div>
+        </section>
+      </div>
+
+      <!-- summary -->
+      <aside class="card panel summary" aria-labelledby="sum">
+        <h2 id="sum">Your order</h2>
+        <div class="lines" id="lines"></div>
+        <div class="totals" id="totals"></div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" id="submit" style="margin-top:18px">Send order</button>
+        <p class="note" id="form-msg" role="alert" style="color:var(--bad)" hidden></p>
+        <p class="note">You do not pay now. We reply on Viber or by phone to confirm.</p>
+      </aside>
+    </form>
+  </div>
+
+  <div class="wrap" id="done-view" hidden></div>
+</main>
+
+<div id="foot"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/order.js"></script>
+</body>
+</html>

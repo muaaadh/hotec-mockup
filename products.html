@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Products | Hotec</title>
+<meta name="description" content="Browse Hotec products for homes, restaurants and guest houses in the Maldives. See the description, what makes each one different, and customer ratings.">
+<meta name="theme-color" content="#255b97">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/HankenGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__hotecReady)document.documentElement.classList.remove('js')},2500)</script>
+</head>
+<body data-page="products">
+
+<div id="nav"></div>
+
+<main class="page">
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <span class="pill"><i data-i="bag"></i>Products</span>
+        <h1>Find the right product</h1>
+      </div>
+      <p class="lead">Choose who you are buying for, then open any product to see its description, what makes it different, and customer ratings.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter products">
+      <button class="fchip" type="button" data-area="all" aria-pressed="true">All products</button>
+      <button class="fchip" type="button" data-area="home" aria-pressed="false"><i data-i="home"></i>For home</button>
+      <button class="fchip" type="button" data-area="restaurant" aria-pressed="false"><i data-i="utensils"></i>For restaurants</button>
+      <button class="fchip" type="button" data-area="guesthouse" aria-pressed="false"><i data-i="bed"></i>For guest houses</button>
+      <span class="fsep" aria-hidden="true"></span>
+      <label class="sr" for="cat">Category</label>
+      <select class="fselect" id="cat" style="margin-left:0">
+        <option value="all">All categories</option>
+        <option value="prep">Food prep</option>
+        <option value="cooking">Cooking</option>
+        <option value="drinks">Coffee and drinks</option>
+        <option value="care">Cleaning and laundry</option>
+      </select>
+      <label class="sr" for="sort">Sort by</label>
+      <select class="fselect" id="sort">
+        <option value="popular">Sort: most popular</option>
+        <option value="rating">Sort: highest rated</option>
+        <option value="low">Sort: price, low to high</option>
+        <option value="high">Sort: price, high to low</option>
+      </select>
+    </div>
+
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="catalog" id="catalog"></div>
+  </div>
+</main>
+
+<dialog class="dlg" id="dlg" aria-labelledby="dlg-title"></dialog>
+
+<div id="foot"></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/products.js"></script>
+</body>
+</html>
